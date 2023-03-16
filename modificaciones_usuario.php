@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="css/estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <title>Modificaciones de usuario</title>
 </head>
 <body>
@@ -16,22 +18,20 @@
     ?>
     <!-- Codigo en html -->
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-success">
-        <div class="container-fluid">
-            <img src="https://via.placeholder.com/40x40" alt="Logo" class="navbar-brand me-auto">
-            <h1 class="navbar-brand mx-3 text-warning" >Paguina administrativa</h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Cristhian</a>
-                    </li>
-                </ul>
-                <button class="btn btn-outline-light btn btn-danger" type="submit">Cerrar sesion</button>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        
+        <div class="col-md-9">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Inicio <img src="img/logo.jp" alt="Inicio"></a>
+                </li>
+                <li><h1> <b>Pagina administrativa</b></h1></li>
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <tr><td> <h4>Administrador</h4> </td></tr>
+            <tr><td> <h4>Atras</h4> </td></tr>
+            <tr><td> <h4>Salir</h4> </td></tr>                
         </div>
     </nav>
     <!--asdf-->
@@ -50,13 +50,13 @@
                         <input type="text" class="form-control mb-3" name="fechaNac" placeholder="fecha de naciemiento">
                         <input type="text" class="form-control mb-3" name="tipoUsuario" placeholder="tipo de usuario">
                         
-                        <input type="submit" class="btn btn-success" value="Adicionar">
+                        <input type="submit" class="btn btn-primary" value="Adicionar">
                     </form>
             </div>
 
             <div class="col-md-8">
                 <table class="table" >
-                    <thead class="table-success table-striped" >
+                    <thead class="table-primary table-striped" >
                         <tr>
                             <th>id usuario</th>
                             <th>nombre</th>
@@ -67,6 +67,7 @@
                             <th>fecha de nacimiento</th>
                             <th>tipo de usuario</th>
                             <th>Accion</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -84,7 +85,7 @@
                                     <td><?php echo $filas["fechaNac"] ?></td>
                                     <td><?php echo $filas["tipoUsuario"] ?></td>
                                     <th>
-                                        <a href="mu_actualizar.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-success">Editar</a>   
+                                        <a href="mu_actualizar.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-primary">Editar</a>   
                                     </th>
                                     <th>
                                         <a href="mu_delete.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-danger">Eliminar</a>
