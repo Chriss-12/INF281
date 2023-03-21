@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #4B0082;
+    color: #dfd8d8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #e4dcea;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.certificado {
+    width: 80%;
+    margin: 20px;
+    background-image: "certificado.png";
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    text-emphasis-color: #0b0a0a;
+}
+
+
+h2 {
+    font-size: 2em;
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .certificado {
+        width: 90%;
+    }
+}
