@@ -84,10 +84,6 @@
           box-sizing: border-box;
 }
 
-.a1{
-  width: 40px;
-  height: 40px;
-}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
