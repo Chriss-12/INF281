@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <title>Modificaciones de usuario</title>
@@ -23,9 +23,11 @@
         <div class="col-md-9">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">Inicio <img src="img/logo.jp" alt="Inicio"></a>
+                    <a><img class="a1" src="img/logo.png" class="icono"></a>
                 </li>
-                <li><h1> <b>Pagina administrativa</b></h1></li>
+                <li>
+                    <h1><b>Pagina administrativa</b></h1>
+                </li>
             </ul>
         </div>
         <div class="col-md-2">
