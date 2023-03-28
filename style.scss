@@ -13,6 +13,9 @@ $custom-colors: (
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 //otros cambios
-
+.a1{
+  width: 40px;
+  height: 40px;
+}
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss"

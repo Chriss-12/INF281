@@ -23,13 +23,13 @@
         <div class="container mt-5">
             <form action="mu_update.php" method="POST">
                 <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario']?>">
-                <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre" value="<?php echo $row['nombre']?>">
-                <input type="text" class="form-control mb-3" name="apPaterno" placeholder="apellido paterno" value="<?php echo $row['apPaterno']?>">
-                <input type="text" class="form-control mb-3" name="apMaterno" placeholder="apMaterno" value="<?php echo $row['apMaterno']  ?>">
-                <input type="text" class="form-control mb-3" name="contrasenia" placeholder="contrasenia" value="<?php echo $row['contrasenia'] ?>">
-                <input type="text" class="form-control mb-3" name="ci" placeholder="ci" value="<?php echo $row['ci']  ?>">
-                <input type="text" class="form-control mb-3" name="fechaNac" placeholder="fecha de nacimiento" value="<?php echo $row['fechaNac']  ?>">
-                <input type="text" class="form-control mb-3" name="tipoUsuario" placeholder="tipo de usuario" value="<?php echo $row['tipoUsuario']  ?>">
+                <label>Nombre<input type="text" class="form-control mb-3" name="nombre" placeholder="nombre" value="<?php echo $row['nombre']?>"></label>
+                <label>Apellido parterno<input type="text" class="form-control mb-3" name="apPaterno" placeholder="apellido paterno" value="<?php echo $row['apPaterno']?>"></label>
+                <label>Apellido materno<input type="text" class="form-control mb-3" name="apMaterno" placeholder="apMaterno" value="<?php echo $row['apMaterno']  ?>"></label>
+                <label>Contrasenia<input type="text" class="form-control mb-3" name="contrasenia" placeholder="contrasenia" value="<?php echo $row['contrasenia'] ?>"></label>
+                <label>CI<input type="text" class="form-control mb-3" name="ci" placeholder="ci" value="<?php echo $row['ci']  ?>"></label>
+                <label>Fecha de nacimiento<input type="text" class="form-control mb-3" name="fechaNac" placeholder="fecha de nacimiento" value="<?php echo $row['fechaNac']  ?>"></label>
+                <label>tipo de usuario<input type="text" class="form-control mb-3" name="tipoUsuario" placeholder="tipo de usuario" value="<?php echo $row['tipoUsuario']  ?>"></label>
 
                 <input type="submit" class="btn btn-primary btn-danger" value="Actualizar">
             </form>

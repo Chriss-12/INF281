@@ -1,3 +1,8 @@
+.a1 {
+  width: 40px;
+  height: 40px;
+}
+
 /*!
    * Bootstrap  v5.2.3 (https://getbootstrap.com/)
    * Copyright 2011-2022 The Bootstrap Authors
@@ -88,6 +93,17 @@
   :root {
     scroll-behavior: smooth;
   }
+}
+.form-row {
+  display: inline-block;
+  margin-bottom: 10px; /* opcional: para agregar un espacio entre las filas */
+}
+
+label {
+  display: inline-block;
+  width: 100px; /* opcional: para establecer un ancho fijo para el label */
+  text-align: right; /* opcional: para alinear el texto del label a la derecha */
+  margin-right: 10px; /* opcional: para agregar un espacio entre el label y el input */
 }
 
 body {

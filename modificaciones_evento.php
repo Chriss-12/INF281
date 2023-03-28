@@ -12,7 +12,9 @@
 <body>
     <?php
       include 'conexion.php';
-      $sql = "SELECT * FROM ACTIVIDAD";
+      $sql = "SELECT a.id_actividad, a.id_usuarioExpositor, a.id_usuarioAdministrador, a.tema, CONCAT(e.nombre, ' ', e.apPaterno,' ', e.apMaterno) AS Expositor, CONCAT(e1.nombre, ' ',e1.apPaterno, ' ', e1.apMaterno) AS Administrador, a.fechaActividad, a.carga_horaria
+      FROM ACTIVIDAD a, Usuario e, Usuario e1
+      Where a.id_usuarioExpositor = e.id_usuario and e.tipoUsuario = 'expositor' and e1.id_usuario = a.id_usuarioAdministrador";
       $resultado = mysqli_query($con, $sql);
       
     ?>
@@ -60,14 +62,13 @@
                 <table class="table" >
                     <thead class="table-primary table-striped" >
                         <tr>
-                            <th>id actividad</th>
-                            <th>id expositor</th>
-                            <th>id administrador</th>
-                            <th>cupos</th>
-                            <th>carga horaria</th>
-                            <th>tipo</th>
-                            <th>tema</th>
+                            <th>Tema</th>
+                            <th>Expositor</th>
+                            <th>Id usuario expositor</th>
+                            <th>Administrador</th>
+                            <th>Id usuario administrador</th>
                             <th>fecha de actividad</th>
+                            <th>carga horaria</th>
                             <th>Accion</th>
                             <th></th>
                         </tr>
@@ -78,14 +79,13 @@
                                 while($filas=mysqli_fetch_array($resultado)){
                             ?>
                                 <tr>
-                                    <td><?php echo $filas["id_actividad"]?></td>
+                                    <td><?php echo $filas["tema"]?></td>
+                                    <td><?php echo $filas["Expositor"]?></td>
                                     <td><?php echo $filas["id_usuarioExpositor"]?></td>
+                                    <td><?php echo $filas["Administrador"]?></td>
                                     <td><?php echo $filas["id_usuarioAdministrador"]?></td>
-                                    <td><?php echo $filas["cupos"]?></td>
-                                    <td><?php echo $filas["carga_horaria"] ?></td>
-                                    <td><?php echo $filas["tipo"] ?></td>
-                                    <td><?php echo $filas["tema"] ?></td>
                                     <td><?php echo $filas["fechaActividad"] ?></td>
+                                    <td><?php echo $filas["carga_horaria"] ?></td>
                                     <th>
                                         <a href="me_actualizar.php?id=<?php echo $filas['id_actividad'] ?>" class="btn btn-primary">Editar</a>   
                                     </th>
