@@ -45,7 +45,7 @@
             <div class="col-md-3">
                 <h1>Ingrese datos</h1>
                     <form action="me_insertar.php" method="POST">
-
+                        <input type="text" class="form-control mb-3" name="id_actividad" placeholder="id actividad">
                         <input type="text" class="form-control mb-3" name="id_usuarioExpositor" placeholder="id usuario expositor">
                         <input type="text" class="form-control mb-3" name="id_usuarioAdministrador" placeholder="id usuario administrador">
                         <input type="text" class="form-control mb-3" name="cupos" placeholder="cupos">
@@ -62,6 +62,7 @@
                 <table class="table" >
                     <thead class="table-primary table-striped" >
                         <tr>
+                            <th>Id actividad</th>
                             <th>Tema</th>
                             <th>Expositor</th>
                             <th>Id usuario expositor</th>
@@ -79,6 +80,7 @@
                                 while($filas=mysqli_fetch_array($resultado)){
                             ?>
                                 <tr>
+                                    <td><?php echo $filas["id_actividad"]?></td>
                                     <td><?php echo $filas["tema"]?></td>
                                     <td><?php echo $filas["Expositor"]?></td>
                                     <td><?php echo $filas["id_usuarioExpositor"]?></td>

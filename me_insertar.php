@@ -12,7 +12,7 @@
     
 
 
-    $sql="INSERT INTO ACTIVIDAD VALUES('$id_actividad','$id_usuarioExpositor','$id_usuarioAdministrador','$cupos', '$carga_horaria', '$tipo', '$tema', '$fechaActividad')";
+    $sql="INSERT INTO ACTIVIDAD VALUES('$id_actividad','$id_usuarioExpositor','$id_usuarioAdministrador', '$cupos', '$carga_horaria', '$tipo', '$tema', '$fechaActividad')";
     $query= mysqli_query($con,$sql);
 
     if($query){
