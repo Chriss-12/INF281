@@ -45,7 +45,7 @@
             <div class="col-md-3">
                 <h1>Ingrese datos</h1>
                     <form action="me_insertar.php" method="POST">
-                        <input type="text" class="form-control mb-3" name="id_actividad" placeholder="id actividad">
+                        <input type="text" class="form-control mb-3" name="id_actividad" placeholder="id actividad">    
                         <input type="text" class="form-control mb-3" name="id_usuarioExpositor" placeholder="id usuario expositor">
                         <input type="text" class="form-control mb-3" name="id_usuarioAdministrador" placeholder="id usuario administrador">
                         <input type="text" class="form-control mb-3" name="cupos" placeholder="cupos">
