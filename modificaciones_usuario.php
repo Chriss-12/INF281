@@ -50,8 +50,12 @@
                         <input type="text" class="form-control mb-3" name="contrasenia" placeholder="password">
                         <input type="text" class="form-control mb-3" name="ci" placeholder="ci">
                         <input type="text" class="form-control mb-3" name="fechaNac" placeholder="fecha de naciemiento">
-                        <input type="text" class="form-control mb-3" name="tipoUsuario" placeholder="tipo de usuario">
-                        
+                        <select class="form-control mb-3" name="tipoUsuario">
+                            <option value="participante">participante</option>
+                            <option value="expositor">expositor</option>
+                            <option value="administrador">administrador</option>
+                            <option value="control">control</option>
+                        </select>
                         <input type="submit" class="btn btn-primary" value="Adicionar">
                     </form>
             </div>

@@ -12,7 +12,7 @@
 <body>
     <?php
       include 'conexion.php';
-      $sql = "SELECT a.id_actividad, a.id_usuarioExpositor, a.id_usuarioAdministrador, a.tema, CONCAT(e.nombre, ' ', e.apPaterno,' ', e.apMaterno) AS Expositor, CONCAT(e1.nombre, ' ',e1.apPaterno, ' ', e1.apMaterno) AS Administrador, a.fechaActividad, a.carga_horaria
+      $sql = "SELECT a.id_actividad, a.id_usuarioExpositor, a.id_usuarioAdministrador, a.tema, CONCAT(e.nombre, ' ', e.apPaterno,' ', e.apMaterno) AS Expositor, CONCAT(e1.nombre, ' ',e1.apPaterno, ' ', e1.apMaterno) AS Administrador, a.fechaActividad, a.carga_horaria, a.tipo
       FROM ACTIVIDAD a, Usuario e, Usuario e1
       Where a.id_usuarioExpositor = e.id_usuario and e.tipoUsuario = 'expositor' and e1.id_usuario = a.id_usuarioAdministrador";
       $resultado = mysqli_query($con, $sql);
@@ -42,28 +42,84 @@
     <div class="container mt-5">
         <div class="row"> 
             
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <h1>Ingrese datos</h1>
                     <form action="me_insertar.php" method="POST">
-                        <input type="text" class="form-control mb-3" name="id_actividad" placeholder="id actividad">    
-                        <input type="text" class="form-control mb-3" name="id_usuarioExpositor" placeholder="id usuario expositor">
-                        <input type="text" class="form-control mb-3" name="id_usuarioAdministrador" placeholder="id usuario administrador">
+                        <input type="text" class="form-control mb-3" name="id_actividad" placeholder="id actividad">   
+                        
                         <input type="text" class="form-control mb-3" name="cupos" placeholder="cupos">
                         <input type="text" class="form-control mb-3" name="carga_horaria" placeholder="carga horaria">
-                        <input type="text" class="form-control mb-3" name="tipo" placeholder="tipo">
+                        <select class="form-control mb-3" name="tipo">
+                            <option value="conferencia">conferencia</option>
+                            <option value="seminario">seminario</option>
+                        </select>
                         <input type="text" class="form-control mb-3" name="tema" placeholder="tema">
                         <input type="text" class="form-control mb-3" name="fechaActividad" placeholder="fechaActividad">
+                        <!-- 
+
+                        <input type="text" class="form-control mb-3" name="id_usuarioExpositor" placeholder="id usuario expositor">
                         
+                        -->
+                        <select name="id_usuarioExpositor" class="form-control mb-3">
+                            <!--Aqui va el codigo de prueba-->
+                            <?php
+                            include 'conexion.php';
+                            $getExpositores = "Select * from usuario where tipoUsuario = 'expositor'";
+                            $getExpositores2 = mysqli_query($con, $getExpositores);
+
+                            while($row = mysqli_fetch_array($getExpositores2)){
+                                $id = $row["id_usuario"];
+                                $nombre = $row["nombre"];
+                                $apPaterno = $row["apPaterno"];
+                                $apMaterno = $row["apMaterno"];
+                                
+                                ?>
+
+                                <option value="<?php echo $id; ?>"><?php echo $nombre." ".$apPaterno." ".$apMaterno;?></option>
+
+                                <?php
+                            }
+                            ?>
+                            <!--Aqui va el codigo de prueba-->
+                        </select>
+                        <select class="form-control mb-3" name="id_usuarioAdministrador">
+                            <!--Aqui va el codigo de prueba-->
+                            <?php
+                            include 'conexion.php';
+                            $getExpositores = "Select * from usuario where tipoUsuario = 'administrador'";
+                            $getExpositores2 = mysqli_query($con, $getExpositores);
+
+                            while($row = mysqli_fetch_array($getExpositores2)){
+                                $id = $row["id_usuario"];
+                                $nombre = $row["nombre"];
+                                $apPaterno = $row["apPaterno"];
+                                $apMaterno = $row["apMaterno"];
+                                
+                                ?>
+
+                                <option value="<?php echo $id; ?>"><?php echo $nombre." ".$apPaterno." ".$apMaterno;?></option>
+
+                                <?php
+                            }
+                            ?>
+                            <!--Aqui va el codigo de prueba-->
+                        </select>
                         <input type="submit" class="btn btn-primary" value="Adicionar">
                     </form>
             </div>
 
-            <div class="col-md-8">
+            
+
+
+
+            
+            <div class="col-md-10">
                 <table class="table" >
                     <thead class="table-primary table-striped" >
                         <tr>
                             <th>Id actividad</th>
                             <th>Tema</th>
+                            <th>Tipo</th>
                             <th>Expositor</th>
                             <th>Id usuario expositor</th>
                             <th>Administrador</th>
@@ -82,6 +138,7 @@
                                 <tr>
                                     <td><?php echo $filas["id_actividad"]?></td>
                                     <td><?php echo $filas["tema"]?></td>
+                                    <td><?php echo $filas["tipo"]?></td>
                                     <td><?php echo $filas["Expositor"]?></td>
                                     <td><?php echo $filas["id_usuarioExpositor"]?></td>
                                     <td><?php echo $filas["Administrador"]?></td>
