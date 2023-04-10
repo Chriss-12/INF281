@@ -12,7 +12,7 @@
 <body>
     <?php
       include 'conexion.php';
-      $sql = "SELECT * FROM USUARIO";
+      $sql = "SELECT * FROM usuarios_backup";
       $resultado = mysqli_query($con, $sql);
       
     ?>
@@ -86,25 +86,7 @@
             <!-- Botones para cambio entre paguinas -->
             
             <!-- -->
-            <div class="col-md-3">
-                <h1>Ingrese datos</h1>
-                    <form action="mu_insertar.php" method="POST">
-
-                        <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
-                        <input type="text" class="form-control mb-3" name="apPaterno" placeholder="apellido paterno">
-                        <input type="text" class="form-control mb-3" name="apMaterno" placeholder="apMaterno">
-                        <input type="text" class="form-control mb-3" name="contrasenia" placeholder="password">
-                        <input type="text" class="form-control mb-3" name="ci" placeholder="ci">
-                        <input type="text" class="form-control mb-3" name="fechaNac" placeholder="fecha de naciemiento">
-                        <select class="form-control mb-3" name="tipoUsuario">
-                            <option value="participante">participante</option>
-                            <option value="expositor">expositor</option>
-                            <option value="administrador">administrador</option>
-                            <option value="control">control</option>
-                        </select>
-                        <input type="submit" class="btn btn-primary" value="Adicionar">
-                    </form>
-            </div>
+            
 
             <div class="col-md-8">
                 <table class="table" >
@@ -119,7 +101,6 @@
                             <th>fecha de nacimiento</th>
                             <th>tipo de usuario</th>
                             <th>Accion</th>
-                            <th></th>
                         </tr>
                     </thead>
 
@@ -136,12 +117,8 @@
                                     <td><?php echo $filas["ci"] ?></td>
                                     <td><?php echo $filas["fechaNac"] ?></td>
                                     <td><?php echo $filas["tipoUsuario"] ?></td>
-                                    <th>
-                                        <a href="mu_actualizar.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-primary">Editar</a>   
-                                    </th>
-                                    <th>
-                                        <a href="mu_delete.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-danger">Eliminar</a>
-                                    </th> 
+                                    <td><?php echo $filas["accion"] ?></td>
+                                    
                                 </tr>
                             <?php 
                                 }

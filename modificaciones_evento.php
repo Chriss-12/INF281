@@ -22,26 +22,72 @@
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         
-        <div class="col-md-9">
+        <div class="col-md-6">
             <ul class="nav navbar-nav">
                 <li>
                     <a><img class="a1" src="img/logo.png" class="icono"></a>
                 </li>
                 <li>
-                    <h1> <b>Pagina administrativa</b></h1>
+                    <h1><b>Pagina administrativa</b></h1>
                 </li>
             </ul>
+            
         </div>
-        <div class="col-md-2">
-            <tr><td> <h4>Administrador</h4> </td></tr>
-            <tr><td> <h4>Atras</h4> </td></tr>
-            <tr><td> <h4>Salir</h4> </td></tr>                
+        <div class="col-md-6">
+            <tr>
+                <td>
+                    <a href="http://localhost/alexCorp1/modificaciones_evento.php" class="btn btn-info">
+                        Modificaciones evento
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="http://localhost/alexCorp1/modificaciones_usuario.php" class="btn btn-info">
+                        Modificaciones usuario
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="http://localhost/alexCorp1/backup_usuario.php" class="btn btn-dark">
+                        Backup usuario
+                    </a>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <a href="http://localhost/alexCorp1/backup_evento.php" class="btn btn-dark">
+                        Backup evento
+                    </a>
+                </td>
+            </tr>  
+
+
+            <tr>
+                <td>
+                    <a href="http://localhost/alexCorp1/modificaciones_evento.php" class="btn btn-success">
+                        Atras
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="http://localhost/alexCorp1/modificaciones_evento.php" class="btn btn-danger">
+                        Salir
+                    </a>
+                </td>
+            </tr>     
+             
         </div>
     </nav>
     <!--asdf-->
     <div class="container mt-5">
         <div class="row"> 
+            <!-- Botones para cambio entre paguinas-->
             
+            <!-- -->
             <div class="col-md-2">
                 <h1>Ingrese datos</h1>
                     <form action="me_insertar.php" method="POST">

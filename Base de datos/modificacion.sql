@@ -188,7 +188,7 @@ VALUES(
 
 
 CREATE TRIGGER ACTIVIDADES_INSERCION
-AFTER INSERT ON ACTIVIDADES
+AFTER INSERT ON ACTIVIDAD
 FOR EACH ROW
 INSERT INTO ACTIVIDADES_BACKUP(
     id_actividad,
@@ -212,3 +212,8 @@ VALUES(
     NEW.fechaActividad,
     "insercion"
 );
+
+
+-------------------Correciones para el horario de entrada y salida-------------
+ALTER TABLE ASISTENCIA ADD COLUMN horario_entrada boolean;
+ALTER TABLE ASISTENCIA ADD COLUMN horario_salida boolean;

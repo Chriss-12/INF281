@@ -7,12 +7,16 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <title>Modificaciones de usuario</title>
+    <title>Modificaciones de eventos</title>
 </head>
 <body>
     <?php
       include 'conexion.php';
-      $sql = "SELECT * FROM USUARIO";
+      $sql = "SELECT ab.id_actividad, concat(exp.nombre, ' ', exp.apPaterno, ' ', exp.apMaterno) as expositor, concat(adm.nombre, ' ', adm.apPaterno, ' ', adm.apMaterno) as administrador, ab.cupos,  ab.carga_horaria, ab.tipo, ab.tema, ab.fechaActividad, ab.accion
+      From actividades_backup ab, usuario exp, usuario adm
+      Where ab.id_usuarioExpositor = exp.id_usuario and exp.tipoUsuario like 'expositor'
+      and ab.id_usuarioAdministrador = adm.id_usuario AND
+      adm.tipoUsuario like 'administrador'";
       $resultado = mysqli_query($con, $sql);
       
     ?>
@@ -83,43 +87,29 @@
     <!--asdf-->
     <div class="container mt-5">
         <div class="row"> 
-            <!-- Botones para cambio entre paguinas -->
+            <!-- Botones para cambio entre paguinas-->
             
             <!-- -->
-            <div class="col-md-3">
-                <h1>Ingrese datos</h1>
-                    <form action="mu_insertar.php" method="POST">
+            
 
-                        <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
-                        <input type="text" class="form-control mb-3" name="apPaterno" placeholder="apellido paterno">
-                        <input type="text" class="form-control mb-3" name="apMaterno" placeholder="apMaterno">
-                        <input type="text" class="form-control mb-3" name="contrasenia" placeholder="password">
-                        <input type="text" class="form-control mb-3" name="ci" placeholder="ci">
-                        <input type="text" class="form-control mb-3" name="fechaNac" placeholder="fecha de naciemiento">
-                        <select class="form-control mb-3" name="tipoUsuario">
-                            <option value="participante">participante</option>
-                            <option value="expositor">expositor</option>
-                            <option value="administrador">administrador</option>
-                            <option value="control">control</option>
-                        </select>
-                        <input type="submit" class="btn btn-primary" value="Adicionar">
-                    </form>
-            </div>
+            
 
-            <div class="col-md-8">
+
+
+            
+            <div class="col-md-10">
                 <table class="table" >
                     <thead class="table-primary table-striped" >
                         <tr>
-                            <th>id usuario</th>
-                            <th>nombre</th>
-                            <th>apellido paterno</th>
-                            <th>apellido materno</th>
-                            <th>contrasenia</th>
-                            <th>ci</th>
-                            <th>fecha de nacimiento</th>
-                            <th>tipo de usuario</th>
+                            <th>Id actividad</th>
+                            <th>Usuario expositor</th>
+                            <th>Usuario administrador</th>
+                            <th>Cupos</th>
+                            <th>Carga horaria</th>
+                            <th>Tipo</th>
+                            <th>Tema</th>
+                            <th>fecha de actividad</th>
                             <th>Accion</th>
-                            <th></th>
                         </tr>
                     </thead>
 
@@ -128,20 +118,16 @@
                                 while($filas=mysqli_fetch_array($resultado)){
                             ?>
                                 <tr>
-                                    <td><?php echo $filas["id_usuario"]?></td>
-                                    <td><?php echo $filas["nombre"]?></td>
-                                    <td><?php echo $filas["apPaterno"]?></td>
-                                    <td><?php echo $filas["apMaterno"]?></td>
-                                    <td><?php echo $filas["contrasenia"] ?></td>
-                                    <td><?php echo $filas["ci"] ?></td>
-                                    <td><?php echo $filas["fechaNac"] ?></td>
-                                    <td><?php echo $filas["tipoUsuario"] ?></td>
-                                    <th>
-                                        <a href="mu_actualizar.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-primary">Editar</a>   
-                                    </th>
-                                    <th>
-                                        <a href="mu_delete.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-danger">Eliminar</a>
-                                    </th> 
+                                    <td><?php echo $filas["id_actividad"]?></td>
+                                    <td><?php echo $filas["expositor"]?></td>
+                                    <td><?php echo $filas["administrador"]?></td>
+                                    <td><?php echo $filas["cupos"]?></td>
+                                    <td><?php echo $filas["carga_horaria"]?></td>
+                                    <td><?php echo $filas["tipo"]?></td>
+                                    <td><?php echo $filas["tema"]?></td>
+                                    <td><?php echo $filas["fechaActividad"] ?></td>
+                                    <td><?php echo $filas["accion"] ?></td>
+                                    
                                 </tr>
                             <?php 
                                 }
