@@ -34,14 +34,14 @@
         <div class="col-md-6">
             <tr>
                 <td>
-                    <a href="http://localhost/alexCorp1/modificaciones_evento.php" class="btn btn-info">
+                    <a href="modificaciones_evento.php" class="btn btn-info">
                         Modificaciones evento
                     </a>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <a href="http://localhost/alexCorp1/modificaciones_usuario.php" class="btn btn-info">
+                    <a href="modificaciones_usuario.php" class="btn btn-info">
                         Modificaciones usuario
                     </a>
                 </td>
@@ -49,30 +49,24 @@
 
             <tr>
                 <td>
-                    <a href="http://localhost/alexCorp1/backup_usuario.php" class="btn btn-dark">
+                    <a href="backup_usuario.php" class="btn btn-dark">
                         Backup usuario
                     </a>
                 </td>
             </tr> 
             <tr>
                 <td>
-                    <a href="http://localhost/alexCorp1/backup_evento.php" class="btn btn-dark">
+                    <a href="backup_evento.php" class="btn btn-dark">
                         Backup evento
                     </a>
                 </td>
             </tr>  
 
 
+            
             <tr>
                 <td>
-                    <a href="http://localhost/alexCorp1/modificaciones_evento.php" class="btn btn-success">
-                        Atras
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="http://localhost/alexCorp1/modificaciones_evento.php" class="btn btn-danger">
+                    <a href="salirSesion.php" class="btn btn-danger">
                         Salir
                     </a>
                 </td>
