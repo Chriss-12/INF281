@@ -1,0 +1,112 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Estilos para el contenedor principal */
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1547516502-1eb331f7a3f3');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Estilos para el formulario */
+  
+  .login-form {
+    background-color: #673ab7    ;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: slide-up 1s ease;
+  }
+  
+  .login-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #f3ecec;
+  }
+  
+  .login-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form label {
+    font-size: 1.2rem;
+    color: #e7e5e5;
+    margin-bottom: 10px;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .login-form input[type="text"]:focus,
+  .login-form input[type="password"]:focus {
+    background-color: #fff;
+    outline: none;
+  }
+  
+  .login-form button[type="submit"] {
+    background-color: rgba(43, 42, 42, 0.8);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+ 
+  
+  .login-form button[type="submit"]:hover {
+    background-color: #673ab7;
+  }
+  
+  /* Animación para el formulario */
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Estilos responsivos */
+  
+  @media only screen and (max-width: 768px) {
+    .login-form {
+      width: 90%;
+    }
+  }
+  
+  @media only screen
+  
+
+

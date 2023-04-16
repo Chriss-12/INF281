@@ -1,0 +1,80 @@
+/* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #4B0082;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*/
+
+li{
+    list-style: none;
+}
+
+.h1-ambiente {
+    font-size: 3em;
+    margin: 0;
+    color: black;
+}
+
+.contenedor-ambiente {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.ambiente {
+    width: 300px;
+    margin: 20px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.img-ambiente {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.h2-ambiente {
+    font-size: 1.5em;
+    margin: 0;
+    color: black;
+
+}
+
+.p-ambiente {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: black;
+}
+
+.a-ambiente {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4B0082;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.a-ambiente:hover {
+    background-color: #FFFFFF;
+    color: #4B0082;
+}
+
+@media screen and (max-width: 668px) {
+    .contenedor-ambiente {
+        flex-direction: column;
+        align-items: center;
+    }
+}
