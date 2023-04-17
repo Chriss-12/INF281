@@ -7,7 +7,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Consulta para verificar las credenciales del usuario
-$consulta = "SELECT * FROM usuario WHERE nombre='$username' AND contrasenia='$password'";
+$consulta = "SELECT * FROM usuario WHERE nombreUsuario='$username' AND contrasenia='$password'";
 $resultado = mysqli_query($con, $consulta);
 
 // Verificar si el usuario existe y tiene el tipo de usuario adecuado
