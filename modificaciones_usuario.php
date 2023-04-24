@@ -18,71 +18,18 @@
     ?>
     <!-- Codigo en html -->
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        
-        <div class="col-md-6">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a><img class="a1" src="img/logo.png" class="icono"></a>
-                </li>
-                <li>
-                    <h1><b>Pagina administrativa</b></h1>
-                </li>
-            </ul>
-            
-        </div>
-        <div class="col-md-6">
-            <tr>
-                <td>
-                    <a href="modificaciones_evento.php" class="btn btn-info">
-                        Modificaciones evento
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="modificaciones_usuario.php" class="btn btn-info">
-                        Modificaciones usuario
-                    </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="backup_usuario.php" class="btn btn-dark">
-                        Backup usuario
-                    </a>
-                </td>
-            </tr> 
-            <tr>
-                <td>
-                    <a href="backup_evento.php" class="btn btn-dark">
-                        Backup evento
-                    </a>
-                </td>
-            </tr>  
-
-
-            
-            <tr>
-                <td>
-                    <a href="salirSesion.php" class="btn btn-danger">
-                        Salir
-                    </a>
-                </td>
-            </tr>     
-             
-        </div>
-    </nav>
+    <?php
+        include 'menuAdmin.php';
+    ?>
     <!--asdf-->
     <div class="container mt-5">
         <div class="row"> 
             <!-- Botones para cambio entre paguinas -->
             
             <!-- -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <h1>Ingrese datos</h1>
-                    <form action="mu_insertar.php" method="POST">
+                    <form action="mu_insertar.php" method="POST" enctype="multipart/form-data">
 
                         <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
                         <input type="text" class="form-control mb-3" name="apPaterno" placeholder="apellido paterno">
@@ -96,11 +43,15 @@
                             <option value="administrador">administrador</option>
                             <option value="control">control</option>
                         </select>
-                        <input type="submit" class="btn btn-primary" value="Adicionar">
+                        <input type="email" class="form-control mb-3" id="email" name="correoElectronico" required>
+                        <input type="text" class="form-control mb-3" name="nombreUsuario" placeholder="nombre de usuario">
+                        
+				        <input type="file" class="form-control mb-3" id="imagen" name="imagen" required>
+                        <button type="submit" class="btn btn-primary">Agregar usuario</button>
                     </form>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <table class="table" >
                     <thead class="table-primary table-striped" >
                         <tr>
@@ -112,6 +63,9 @@
                             <th>ci</th>
                             <th>fecha de nacimiento</th>
                             <th>tipo de usuario</th>
+                            <th>email</th>
+                            <th>nombre usuario</th>
+                            <th>imagen</th>
                             <th>Accion</th>
                             <th></th>
                         </tr>
@@ -130,6 +84,9 @@
                                     <td><?php echo $filas["ci"] ?></td>
                                     <td><?php echo $filas["fechaNac"] ?></td>
                                     <td><?php echo $filas["tipoUsuario"] ?></td>
+                                    <td><?php echo $filas["correoElectronico"] ?></td>
+                                    <td><?php echo $filas["nombreUsuario"] ?></td>
+                                    <td><?php echo substr($filas["imagen"], 0, 7) ?></td>
                                     <th>
                                         <a href="mu_actualizar.php?id=<?php echo $filas['id_usuario'] ?>" class="btn btn-primary">Editar</a>   
                                     </th>

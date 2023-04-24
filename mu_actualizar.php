@@ -14,14 +14,16 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
         <title>Actualizar</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
     </head>
     <body>
+    <?php
+        include 'menuAdmin.php';
+    ?>
         <div class="container mt-5">
-            <form action="mu_update.php" method="POST">
+            <form action="mu_update.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario']?>">
                 <label>Nombre
                     <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre" value="<?php echo $row['nombre']?>">
@@ -61,8 +63,21 @@
                         ?>
                     </select>
                 </label>
-
-                <input type="submit" class="btn btn-primary btn-danger" value="Actualizar">
+                <label>Correo electronico
+                    <input type="email" class="form-control mb-3" name="correoElectronico" placeholder="Correo electronico" value="<?php echo $row['correoElectronico']  ?>">
+                </label>
+                <label>Nombre de usuario
+                    <input type="text" class="form-control mb-3" name="nombreUsuario" placeholder="Nombre de usuario" value="<?php echo $row['nombreUsuario']  ?>">
+                </label>
+                <label>Imagen
+                    <input type="file" class="form-control mb-3" id="imagen" name="imagen" value = "<?php echo $row['imagen']  ?>" required>
+                </label>
+                <br>
+                <label>Imagen
+                    <td><img src="<?php echo $row["imagen"]; ?>" alt="" width="300"></td>
+                </label>
+                <br>
+                <input type="submit" class="btn btn-primary btn-danger mb-3" value="Actualizar">
             </form>
         </div>
     </body>

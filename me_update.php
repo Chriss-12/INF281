@@ -1,7 +1,6 @@
 <?php
 
     include 'conexion.php';
-
     $id_actividad = $_POST["id_actividad"];
     $id_usuarioExpositor = $_POST['id_usuarioExpositor'];
     $id_usuarioAdministrador = $_POST['id_usuarioAdministrador'];
