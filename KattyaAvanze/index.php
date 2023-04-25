@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <title>LEX-CORP</title>
+    <title>LexCorp</title>
     
   </head>
   <body class="sidebar-mini fixed">
