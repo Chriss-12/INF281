@@ -13,5 +13,17 @@
     <?php
         include 'menuExpositor.php';
     ?>
+    <div class="col-md-7">
+        <h1>Ingrese datos</h1>
+            <form action="mex_insertar.php" method="POST" enctype="multipart/form-data">
+
+
+                <input type="text" class="form-control mb-3" name="descripcion" placeholder="descripcion">
+                
+                
+                <input type="file" class="form-control mb-3" id="pdf" name="pdf" required>
+                <button type="submit" class="btn btn-primary">Agregar archivo</button>
+            </form>
+    </div>
 </body>
 </html>
