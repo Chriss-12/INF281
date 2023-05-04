@@ -17,12 +17,13 @@
         <h1>Cambiar paguina</h1>
         <form action="cambiosPaguina.php" method="POST">
 
-            <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
+            <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre" value="LexCorp" default>
             <select class="form-control mb-3" name="color">
                 <option value="rojo">rojo</option>
                 <option value="verde">verde</option>
                 <option value="naranja">naranja</option>
                 <option value="negro">negro</option>
+                <option value="lila">lila</option>
             </select>
             <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </form>

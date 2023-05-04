@@ -27,6 +27,8 @@
                 </div>
                 <button type="submit" class="btn btn-danger w-100">Ingresar</button>
               </form>
+              <a href="kattyaAvanze/index.php" class="btn btn-primary">Volver atras</a>
+
             </div>
           </div>
         </div>

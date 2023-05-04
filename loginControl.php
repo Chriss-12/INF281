@@ -2,10 +2,13 @@
 // Conexión a la base de datos
 include 'conexion.php';
 
+session_start();
 // Obtener los datos del formulario de inicio de sesión
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+$_SESSION['nombre_usuario'] = $username;
+$_SESSION['contrasenia'] = $password;
 // Consulta para verificar las credenciales del usuario
 $consulta = "SELECT * FROM usuario WHERE nombreUsuario='$username' AND contrasenia='$password'";
 $resultado = mysqli_query($con, $consulta);
@@ -19,7 +22,7 @@ if (mysqli_num_rows($resultado) >= 1) {
 	} 
 	elseif ($usuario['tipoUsuario'] == 'participante') {
 		// Redirigir al usuario a la página de usuario
-		header('Location: usuario.php');
+		header('Location: participante.php');
 	} 
 	elseif ($usuario['tipoUsuario'] == 'control') {
 		// Redirigir al usuario a la página de usuario
@@ -27,7 +30,7 @@ if (mysqli_num_rows($resultado) >= 1) {
 	} 
 	elseif ($usuario['tipoUsuario'] == 'expositor') {
 		// Redirigir al usuario a la página de usuario
-		header('Location: usuario.php');
+		header('Location: expositor.php');
 	} 
 	else {
 		// Si el tipo de usuario no está definido correctamente, mostrar un error

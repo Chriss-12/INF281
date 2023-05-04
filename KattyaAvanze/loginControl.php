@@ -19,7 +19,7 @@ if (mysqli_num_rows($resultado) >= 1) {
 	} 
 	elseif ($usuario['tipoUsuario'] == 'participante') {
 		// Redirigir al usuario a la página de usuario
-		header('Location: usuario.php');
+		header('Location: ../participante.php');
 	} 
 	elseif ($usuario['tipoUsuario'] == 'control') {
 		// Redirigir al usuario a la página de usuario
@@ -27,7 +27,7 @@ if (mysqli_num_rows($resultado) >= 1) {
 	} 
 	elseif ($usuario['tipoUsuario'] == 'expositor') {
 		// Redirigir al usuario a la página de usuario
-		header('Location: usuario.php');
+		header('Location: ../expositor.php');
 	} 
 	else {
 		// Si el tipo de usuario no está definido correctamente, mostrar un error

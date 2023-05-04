@@ -14,34 +14,9 @@
   <body class="sidebar-mini fixed">
     <div class="wrapper">
       <!-- Navbar-->
-      <header class="main-header hidden-print"><a class="logo" href="index.php">Lex-Corp</a>
-        <nav class="navbar navbar-static-top">
-          <div class="container-fluid">
-            
-            <div class="collapse navbar-collapse" id="navbarColor01">
-              <ul class="navbar-nav me-auto">
-                <li class="navbar-custom-menu">
-                  <a href="index.php"><span >Inicio
-                  </span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="quienes.php">Quienes somos?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="eventos.php">Eventos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contactanos.php">Contactanos</a>
-                
-              </ul>
-             
-            </div>
-          </div>
-
-          <!-- Navbar Right Menu-->
-          
-        </nav>
-      </header>
+      <?php
+        include 'menu.php';
+      ?>
       <!-- Side-Nav-->
       <div class="content-wrapper">
        
@@ -55,7 +30,7 @@
                 <thead>
                   <tr>
                     <th>FACEBOOK:</th>
-                    <th>  Lex-Corp</th>
+                    <th>Immat</th>
                     <th><a href="https://www.facebook.com">
                         <img src="imagenes/logo facebook.png" height="20px" width="20px" alt="Descripción de la imagen">
                     </a></th>
@@ -77,7 +52,7 @@
 
                   </tr>
                   <tr>
-                    <p>Correo: lex-Corp.@gmail.com</p>
+                    <p>Correo: Immat.@gmail.com</p>
 
                   </tr>
                 </thead>

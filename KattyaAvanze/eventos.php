@@ -23,8 +23,9 @@
     ?>
     <div class="wrapper">
       <!-- Navbar-->
-        <header class="main-header hidden-print"><a class="logo" href="index.php">Lex-Corp</a>
-        <nav class="navbar navbar-static-top">
+      <?php
+        include 'menu.php';
+      ?>
           <div class="container-fluid">
             
             <div class="collapse navbar-collapse" id="navbarColor01">
@@ -58,7 +59,7 @@
                 
                   <div class="team-member">
                     <img src="../<?php echo $filas["imagen"]?>" alt="Imagen">
-                    <h2>Tema <?php echo $filas["tema"]?></h2>
+                    <h2>Tema: <?php echo $filas["tema"]?></h2>
                     <h3><?php echo $filas["nombre"]. ' '. $filas["apPaterno"]. ' '. $filas["apMaterno"]?></h3>
                     <p>Fecha: <?php echo $filas["fechaActividad"]?></p>
                     <p>Tipo de evento: <?php echo $filas["tipo"]?></p>
@@ -69,6 +70,8 @@
             <?php
             }
         ?>
-            
+        <div class="content-wrapper">
+            <img src="../pictures/logos/iimat.png" alt="uma">
+        </div> 
   </body>
 </html>
